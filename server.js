@@ -11,6 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
+//Work on mongoose atlas
+
 mongoose.connect(
     process.env.MONGODB_URI || 'mongodb://localhost/Workout',
     {
@@ -20,6 +22,7 @@ mongoose.connect(
       useFindAndModify: false
     }
 );
+//heroku
 
 app.use(require("./routes/apiRoutes"));
 app.use(require("./routes/htmlRoutes"));
